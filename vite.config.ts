@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // Replace 'your-repo-name' with your actual GitHub repository name
 export default defineConfig({
-  base: '/your-repo-name/',
+  base: '/ui-ux-persona-web/',
   plugins: [react()],
 })
 
