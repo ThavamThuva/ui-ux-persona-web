@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { ChevronRight, Star, CheckCircle, Mail, Phone, MapPin, ExternalLink, Github, Linkedin, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
 const Index = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -15,88 +13,78 @@ const Index = () => {
     project: "",
     message: ""
   });
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
       title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you within 24 hours.",
+      description: "Thank you for reaching out. I'll get back to you within 24 hours."
     });
-    setFormData({ name: "", email: "", project: "", message: "" });
+    setFormData({
+      name: "",
+      email: "",
+      project: "",
+      message: ""
+    });
   };
-
-  const services = [
-    {
-      title: "UI/UX Design",
-      description: "Creating intuitive and beautiful user interfaces that enhance user experience",
-      price: "From $2,500",
-      features: ["User Research", "Wireframing", "Visual Design", "Design Systems"]
-    },
-    {
-      title: "Prototyping",
-      description: "Interactive prototypes to validate ideas and test user flows",
-      price: "From $1,200",
-      features: ["Interactive Prototypes", "User Testing", "Animation Design", "Figma/Adobe XD"]
-    },
-    {
-      title: "Design Consultation",
-      description: "Strategic design guidance for your product development",
-      price: "From $150/hr",
-      features: ["Design Audit", "Strategy Planning", "Team Training", "Best Practices"]
-    }
-  ];
-
-  const portfolio = [
-    {
-      title: "E-commerce Mobile App",
-      category: "Mobile Design",
-      description: "Complete redesign of shopping experience with 40% conversion increase",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
-      tags: ["UI Design", "Mobile", "E-commerce"]
-    },
-    {
-      title: "SaaS Dashboard",
-      category: "Web Application",
-      description: "Analytics dashboard design for B2B software platform",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-      tags: ["Dashboard", "SaaS", "Data Visualization"]
-    },
-    {
-      title: "Banking App Redesign",
-      category: "FinTech",
-      description: "Modern banking experience with enhanced security features",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
-      tags: ["Mobile", "FinTech", "Security"]
-    }
-  ];
-
-  const offers = [
-    {
-      title: "Website Design Package",
-      originalPrice: "$4,500",
-      currentPrice: "$3,200",
-      description: "Complete website design with responsive layouts and style guide",
-      features: ["5-10 Pages", "Responsive Design", "Style Guide", "3 Revisions"],
-      badge: "Popular"
-    },
-    {
-      title: "Mobile App UI Kit",
-      originalPrice: "$2,800",
-      currentPrice: "$1,900",
-      description: "Comprehensive mobile app design with component library",
-      features: ["20+ Screens", "Component Library", "Icon Set", "Dark/Light Mode"],
-      badge: "Limited Time"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+  const services = [{
+    title: "UI/UX Design",
+    description: "Creating intuitive and beautiful user interfaces that enhance user experience",
+    price: "From $2,500",
+    features: ["User Research", "Wireframing", "Visual Design", "Design Systems"]
+  }, {
+    title: "Prototyping",
+    description: "Interactive prototypes to validate ideas and test user flows",
+    price: "From $1,200",
+    features: ["Interactive Prototypes", "User Testing", "Animation Design", "Figma/Adobe XD"]
+  }, {
+    title: "Design Consultation",
+    description: "Strategic design guidance for your product development",
+    price: "From $150/hr",
+    features: ["Design Audit", "Strategy Planning", "Team Training", "Best Practices"]
+  }];
+  const portfolio = [{
+    title: "E-commerce Mobile App",
+    category: "Mobile Design",
+    description: "Complete redesign of shopping experience with 40% conversion increase",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
+    tags: ["UI Design", "Mobile", "E-commerce"]
+  }, {
+    title: "SaaS Dashboard",
+    category: "Web Application",
+    description: "Analytics dashboard design for B2B software platform",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+    tags: ["Dashboard", "SaaS", "Data Visualization"]
+  }, {
+    title: "Banking App Redesign",
+    category: "FinTech",
+    description: "Modern banking experience with enhanced security features",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+    tags: ["Mobile", "FinTech", "Security"]
+  }];
+  const offers = [{
+    title: "Website Design Package",
+    originalPrice: "$4,500",
+    currentPrice: "$3,200",
+    description: "Complete website design with responsive layouts and style guide",
+    features: ["5-10 Pages", "Responsive Design", "Style Guide", "3 Revisions"],
+    badge: "Popular"
+  }, {
+    title: "Mobile App UI Kit",
+    originalPrice: "$2,800",
+    currentPrice: "$1,900",
+    description: "Comprehensive mobile app design with component library",
+    features: ["20+ Screens", "Component Library", "Icon Set", "Dark/Light Mode"],
+    badge: "Limited Time"
+  }];
+  return <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Header */}
       <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-slate-200 z-50">
         <div className="container mx-auto px-6 py-4">
           <nav className="flex items-center justify-between">
-            <div className="text-2xl font-bold text-slate-800">Sarah Chen</div>
+            <div className="text-4xl font-extrabold bg-gradient-to-r from-blue-500 to-indigo-600 text-transparent bg-clip-text">Sarah Chen</div>
             <div className="hidden md:flex space-x-8">
               <a href="#about" className="text-slate-600 hover:text-blue-600 transition-colors">About</a>
               <a href="#services" className="text-slate-600 hover:text-blue-600 transition-colors">Services</a>
@@ -148,20 +136,14 @@ const Index = () => {
                 transform their digital presence and improve user satisfaction by up to 60%.
               </p>
               <div className="flex flex-wrap gap-3">
-                {["Figma", "Adobe Creative Suite", "Sketch", "InVision", "User Research", "Prototyping"].map((skill) => (
-                  <Badge key={skill} variant="secondary" className="bg-blue-100 text-blue-800 px-3 py-1">
+                {["Figma", "Adobe Creative Suite", "Sketch", "InVision", "User Research", "Prototyping"].map(skill => <Badge key={skill} variant="secondary" className="bg-blue-100 text-blue-800 px-3 py-1">
                     {skill}
-                  </Badge>
-                ))}
+                  </Badge>)}
               </div>
             </div>
             <div className="animate-fade-in">
               <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1494790108755-2616b612b5e5?w=500&h=600&fit=crop&crop=face" 
-                  alt="Sarah Chen - UI/UX Designer" 
-                  className="rounded-2xl shadow-2xl w-full"
-                />
+                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b5e5?w=500&h=600&fit=crop&crop=face" alt="Sarah Chen - UI/UX Designer" className="rounded-2xl shadow-2xl w-full" />
                 <div className="absolute -bottom-6 -right-6 bg-blue-600 text-white p-4 rounded-xl shadow-lg">
                   <div className="flex items-center space-x-2">
                     <Star className="h-5 w-5 fill-current" />
@@ -185,8 +167,7 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in bg-white">
+            {services.map((service, index) => <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in bg-white">
                 <CardHeader>
                   <CardTitle className="text-slate-800 text-xl">{service.title}</CardTitle>
                   <CardDescription className="text-slate-600">{service.description}</CardDescription>
@@ -196,19 +177,16 @@ const Index = () => {
                     <span className="text-3xl font-bold text-blue-600">{service.price}</span>
                   </div>
                   <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center space-x-2">
+                    {service.features.map((feature, idx) => <li key={idx} className="flex items-center space-x-2">
                         <CheckCircle className="h-4 w-4 text-green-500" />
                         <span className="text-slate-600">{feature}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                   <Button className="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white">
                     Get Started
                   </Button>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -223,14 +201,9 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {portfolio.map((project, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in group overflow-hidden">
+            {portfolio.map((project, index) => <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in group overflow-hidden">
                 <div className="relative overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
+                  <img src={project.image} alt={project.title} className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <ExternalLink className="h-8 w-8 text-white" />
                   </div>
@@ -244,15 +217,12 @@ const Index = () => {
                   <h3 className="text-xl font-semibold text-slate-800 mb-2">{project.title}</h3>
                   <p className="text-slate-600 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, idx) => (
-                      <Badge key={idx} variant="outline" className="text-xs">
+                    {project.tags.map((tag, idx) => <Badge key={idx} variant="outline" className="text-xs">
                         {tag}
-                      </Badge>
-                    ))}
+                      </Badge>)}
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -267,13 +237,10 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {offers.map((offer, index) => (
-              <Card key={index} className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 animate-fade-in bg-white relative overflow-hidden">
-                {offer.badge && (
-                  <div className="absolute top-4 right-4">
+            {offers.map((offer, index) => <Card key={index} className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 animate-fade-in bg-white relative overflow-hidden">
+                {offer.badge && <div className="absolute top-4 right-4">
                     <Badge className="bg-orange-500 text-white">{offer.badge}</Badge>
-                  </div>
-                )}
+                  </div>}
                 <CardHeader>
                   <CardTitle className="text-slate-800 text-2xl">{offer.title}</CardTitle>
                   <CardDescription className="text-slate-600">{offer.description}</CardDescription>
@@ -284,19 +251,16 @@ const Index = () => {
                     <span className="text-4xl font-bold text-green-600 ml-2">{offer.currentPrice}</span>
                   </div>
                   <ul className="space-y-3 mb-6">
-                    {offer.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center space-x-2">
+                    {offer.features.map((feature, idx) => <li key={idx} className="flex items-center space-x-2">
                         <CheckCircle className="h-5 w-5 text-green-500" />
                         <span className="text-slate-600">{feature}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                   <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg py-3">
                     Claim This Offer
                   </Button>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -345,44 +309,32 @@ const Index = () => {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-slate-700 mb-2">Name</label>
-                      <Input 
-                        type="text" 
-                        placeholder="Your name"
-                        value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
-                        required
-                      />
+                      <Input type="text" placeholder="Your name" value={formData.name} onChange={e => setFormData({
+                      ...formData,
+                      name: e.target.value
+                    })} required />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-slate-700 mb-2">Email</label>
-                      <Input 
-                        type="email" 
-                        placeholder="your@email.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        required
-                      />
+                      <Input type="email" placeholder="your@email.com" value={formData.email} onChange={e => setFormData({
+                      ...formData,
+                      email: e.target.value
+                    })} required />
                     </div>
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">Project Type</label>
-                    <Input 
-                      type="text" 
-                      placeholder="e.g., Mobile App Design"
-                      value={formData.project}
-                      onChange={(e) => setFormData({...formData, project: e.target.value})}
-                      required
-                    />
+                    <Input type="text" placeholder="e.g., Mobile App Design" value={formData.project} onChange={e => setFormData({
+                    ...formData,
+                    project: e.target.value
+                  })} required />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">Message</label>
-                    <Textarea 
-                      placeholder="Tell me about your project..."
-                      rows={4}
-                      value={formData.message}
-                      onChange={(e) => setFormData({...formData, message: e.target.value})}
-                      required
-                    />
+                    <Textarea placeholder="Tell me about your project..." rows={4} value={formData.message} onChange={e => setFormData({
+                    ...formData,
+                    message: e.target.value
+                  })} required />
                   </div>
                   <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
                     Send Message
@@ -439,8 +391,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
