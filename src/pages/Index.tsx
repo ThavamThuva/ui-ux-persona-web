@@ -84,7 +84,7 @@ const Index = () => {
       <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-slate-200 z-50">
         <div className="container mx-auto px-6 py-4">
           <nav className="flex items-center justify-between">
-            <div className="text-4xl font-extrabold bg-gradient-to-r from-blue-500 to-indigo-600 text-transparent bg-clip-text">Sarah Chen</div>
+            <div className="text-4xl font-extrabold bg-gradient-to-r from-blue-500 to-indigo-600 text-transparent bg-clip-text">NortNet.lk</div>
             <div className="hidden md:flex space-x-8">
               <a href="#about" className="text-slate-600 hover:text-blue-600 transition-colors">About</a>
               <a href="#services" className="text-slate-600 hover:text-blue-600 transition-colors">Services</a>
@@ -351,7 +351,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Sarah Chen</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">NorthNet.lk</h3>
               <p className="text-slate-400 mb-4">
                 Creating beautiful, functional designs that solve real problems and delight users.
               </p>
