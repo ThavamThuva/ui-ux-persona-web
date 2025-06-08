@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 export default defineConfig({
   plugins: [react()],
-  base = "/ui-ux-persona-web",
+  base : "/ui-ux-persona-web",
 });
 
 // // https://vitejs.dev/config/
